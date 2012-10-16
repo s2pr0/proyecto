@@ -35,12 +35,15 @@ nav{
 	text-align:center;
 	padding: 5px 0px 5px 0px;
 	width:20%;
+	transition-duration: 1s;
 }
 
 .link:hover{
 	background:silver;
 	color:black;
 	cursor:pointer;
+	transition-duration: 1s;
+
 }
 
 #cuerpo{
@@ -73,4 +76,19 @@ footer{
 	position: fixed;
 	bottom:0px;
 	font-size:12px;
+}
+
+@media screen and (max-width:800px){
+	footer{
+		display: none;
+	}
+	#cuerpo{
+		width:100%;
+	}
+	.link{
+		width:100%;
+	}
+	header{
+		width:100%;
+	}
 }

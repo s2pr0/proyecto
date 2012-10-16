@@ -20,7 +20,7 @@
 			<ul>
 				<li class="link">Inicio</li>
 				<li class="link">Noticias</li>
-				<li class="link">Ventas</li>
+				<li class="link">Libro de Visitas</li>
 				<li class="link">Administración</li>
 				<li class="link">Solicitudes</li>
 			<ul>	
