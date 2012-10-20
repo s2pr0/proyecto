@@ -47,6 +47,7 @@ nav{
 }
 
 #cuerpo{
+	background:white;
 	margin:0px auto;
 	height:400px;
 	width:80%;
@@ -54,6 +55,8 @@ nav{
 
 #contenido{
 	background:white;
+	min-height: 400px;
+	width: 100%;
 	float:left;
 }	
 

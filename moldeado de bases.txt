@@ -1,12 +1,11 @@
 Bases De Datos 
 
-CREATE TABLE usuarios(
+CREATE TABLE users(
 id int(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nombre varchar(50) NOT NULL,
 usuario varchar(50) NOT NULL,
 clave varchar(50) NOT NULL,
-correo varchar(50) NOT NULL,
-logeado int(4) NOT NULL
+correo varchar(50) NOT NULL
 );
 
 

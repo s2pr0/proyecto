@@ -18,11 +18,11 @@
 		</section>	
 		<nav id="menu-principal">
 			<ul>
-				<li class="link">Inicio</li>
-				<li class="link">Noticias</li>
-				<li class="link">Libro de Visitas</li>
-				<li class="link">Administración</li>
-				<li class="link">Solicitudes</li>
+				<li class="link" id="inicio" onclick="cambio(this)">Inicio</li>
+				<li class="link" id="noticias" onclick="cambio(this)">Noticias</li>
+				<li class="link" id="libro" onclick="cambio(this)">Libro de Visitas</li>
+				<li class="link" id="admin" onclick="cambio(this)">Administración</li>
+				<li class="link" id="solicitudes" onclick="cambio(this)">Solicitudes</li>
 			<ul>	
 		</nav>
 	</header>
