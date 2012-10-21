@@ -7,11 +7,16 @@ class login{
 	private $consulta;
 	private $status;
 	private $datos;
+	private $msj;
 
-	function __construct($user,$pass)
+	function __construct($user=null,$pass=null)
 	{
-		$this->user=$user;
-		$this->pass=$pass;
+		
+		if(!empty($user) || !empty($pass))
+		{
+			$this->user=$user;
+			$this->pass=$pass;
+		}
 	}
 
 	function iniciar()
@@ -24,23 +29,24 @@ class login{
 		{
 			if($this->pass == $this->datos['clave'])
 			{
-				echo 'password correcta';
-				$_SESSION['Admin'] = 1;
+
+				session_start();	
+				$_SESSION['Tipo'] = 1;
+				$_SESSION['Nombre'] = $this->datos['nombre'];
+				echo '<section id="usuario"><p id="login-top" onclick="cerrar()">Session iniciada como '.$_SESSION['Nombre'].'. Click para Cerrar Session</p></section>';
 			}
 			else
 			{
-				echo 'password incorrecta';
+				alert('Password Incorrecta');
 			}
 		}
 		else
 		{
-			echo 'El usuario ( ',$this->user,' ) que introdujo no existe en la base de datos';
+			$this->msj = "El usuario '{$this->user}' no existe en la base de datos";
+			alert($this->msj);
 		}
-		
-		
-
 	}
-
-}
+}	
 
 ?>
+

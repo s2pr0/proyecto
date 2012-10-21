@@ -1,3 +1,11 @@
+<?
+	session_start();
+	if(!isset($_SESSION['Tipo']))
+	{
+		$_SESSION['Tipo'] = 0;
+	}	
+?>
+
 <!DOCTYPE html>
 <html lang="Es_VE">
 <head>
@@ -13,6 +21,16 @@
 </head>
 <body>
 	<header>
+		<?
+			if($_SESSION['Tipo'] >= 1)
+			{	
+				echo '<section id="usuario"><p id="login-top" onclick="cerrar()">Session iniciada como '.$_SESSION['Nombre'].'. Click para Cerrar Session</p></section>';
+			}
+			else 
+			{	
+				echo '<section id="usuario"><p id="login-top" onclick="barra()">Iniciar Session</p></section>';
+			}
+		?>
 		<section id="logo">
 			<img src="lib/img/logo.png" id="imagen-logo"/>
 		</section>	
@@ -28,8 +46,8 @@
 	</header>
 	<section id="cuerpo">
 		<section id="contenido">
+			
 			<h1> Bienvenido al Portal del<br/> Consejo Comunal Centro Norte </h1>
-
 			<p class="text-normal">
 				Este portal tiene el proposito de informar a traves del medio digital sobre nuestros avances
 				en la comunidad, de igual manera para hacer llegar y atender las inquietudes de la comunidad.
