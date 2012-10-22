@@ -11,7 +11,9 @@ class noticia{
     public $numTotalRegistros;
     public $numTotalPaginas;
     public $pagina;
-
+    /*
+    *metodo encargado de mostrar una noticia en una pagina
+    */
     public function mostrar($inId=null){
         if(!empty($inId)){
             $consulta = "select * from noticias where id=".$inId." and estado=true;";
@@ -22,29 +24,47 @@ class noticia{
                 $this->titulo=$datos['titulo'];
                 $this->noticia=$datos['noticia'];
                 $this->fecha=$datos['fecha'];
+                echo $noticia;
             }else{
-
+                echo $error;
             }
         }
     }
-
-
-    public function prevista($autor, $titulo, $noticia){
-          if(!empty($inAutor)){
-            $this->autor=$inAutor;
+    /*
+    *Metodo que se usará para previsulizar resultados de busqueda
+    */
+    public function prevista($inId=null,$inAutor=null,$inTitulo=null,$inNoticia=null){
+        if (!empty($inId)){
+            $preview['id']=$inId;
+        }
+        if(!empty($inAutor)){
+            $preview['autor']=$inAutor;
         }
         if(!empty($inTitulo)){
-            $this->titulo=$inTitulo;
+            $preview['titulo']=$inTitulo;
         }
         if(!empty($inNoticia)){
-            $this->noticia=$inNoticia;
+            $preview['noticia']=$inNoticia[500];
         }
-        $autor=$this->autor;
-        $titulo=$this->titulo;
-        $noticia=$this->noticia;
+        return $preview;
     }
+    /*
+    *Metodo que se encargará de mostrar los resultados en la pagina
+    */
+    public function resultadosPagina($inId=null, $inEtiquetas=null, $pagina=null){
+        //Verificando que la variable no esté vacía
+        if (!empty($pagina)){
+            //inicializo las variables
+            $inicio = 0;
+            $this->pagina = 1;
+        }else{
+            $this->pagina = $pagina;
+            $inicio = ($this->pagina - 1)*10;
+        }
 
-    function __construct($inId=null, $inEtiquetas=null, $pagina=null){
+    }
+/*
+    function __construct(){
         //verificando que la variable no esté vacía
         if(!empty($pagina)){
             //inicializo las variables
