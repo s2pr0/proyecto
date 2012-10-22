@@ -1,5 +1,15 @@
-<form id="login" onsubmit="login(this); return false">
-	<input name="usuario" type="text" placeholder="Usuario">
-	<input name="clave" type="password" placeholder="Clave">
-	<input name="Login" type="submit" value="Login">
-</form>
+<?
+session_start();
+	if(!isset($_SESSION['Tipo']))
+	{
+		$_SESSION['Tipo'] = 0;
+	}		
+	if($_SESSION['Tipo'] >= 1)
+	{
+		echo 'Session iniciada';
+	}
+	else
+	{
+		echo 'No haz iniciado session.';
+	}
+?>
