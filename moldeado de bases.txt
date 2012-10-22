@@ -22,7 +22,10 @@ CREATE TABLE noticias(
 id int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 autor varchar(50) NOT NULL,
 titulo varchar(50) NOT NULL,
-noticia longtext NOT NULL
+noticia longtext NOT NULL,
+idUser int(4) NOT NULL,
+estado tinyint(1) NOT NULL,
+fecha date NOT NULL
 );
 
 CREATE TABLE comentarios(
