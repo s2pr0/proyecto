@@ -124,3 +124,43 @@ footer{
 	padding:0px;
 	font-size:10px;	
 }
+
+.titulo-noticia{
+	color:black;
+	margin:5% 10% auto 10%;
+	font-size:40px;
+	text-transform: uppercase; 
+}
+
+.autor-noticia{
+	color:silver;
+	font-style: italic;
+    margin:0% 10% auto 10%;
+	font-size:14px;
+}
+.autor-noticias{
+	color:silver;
+	font-style: italic;
+	font-size:14px;
+}
+
+.noticia{
+	font-size:16px;
+	margin: 2% 10% 5% 10%;
+	text-indent: 2em;
+	text-align:justify;
+}
+.fecha-noticia{
+	color:silver;
+	font-style: italic;
+	margin-right:10%;
+	text-align:right;
+	font-size:14px;
+}
+
+
+hr {
+	margin: 0px auto;
+	width:20%;
+
+}

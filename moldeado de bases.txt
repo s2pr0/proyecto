@@ -1,21 +1,12 @@
-Bases De Datos 
-
-CREATE TABLE users(
-id int(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-nombre varchar(50) NOT NULL,
-usuario varchar(50) NOT NULL,
-clave varchar(50) NOT NULL,
-correo varchar(50) NOT NULL
-);
-
-
-CREATE TABLE censo(
+CREATE TABLE habitantes(
 id int(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nombre varchar(50) NOT NULL,
 correo varchar(50) NOT NULL,
 cedula int(20) NOT NULL,
 direccion varchar(50) NOT NULL,
-residente int(4) NOT NULL
+residente int(4) NOT NULL,
+clave varchar(50) NOT NULL,
+tipo int(1) NOT NULL
 );
 
 CREATE TABLE noticias(
@@ -23,15 +14,13 @@ id int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 autor varchar(50) NOT NULL,
 titulo varchar(50) NOT NULL,
 noticia longtext NOT NULL,
-idUser int(4) NOT NULL,
-estado tinyint(1) NOT NULL,
-fecha date NOT NULL
+fecha varchar(10) NOT NULL
 );
 
 CREATE TABLE comentarios(
 id int(50) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 idNoticia int(10) NOT NULL,
 nombre varchar(50) NOT NULL,
-email varchar(50) NOT NULL,
-comentario varchar(300) NOT NULL
+comentario varchar(300) NOT NULL,
+fecha varchar(10) NOT NULL
 );

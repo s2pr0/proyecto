@@ -21,7 +21,7 @@ class login{
 
 	function iniciar()
 	{
-		$this->consulta = mysql_query("SELECT * FROM users WHERE usuario='{$this->user}' ");
+		$this->consulta = mysql_query("SELECT * FROM habitantes WHERE correo='{$this->user}' ");
 		$this->status = mysql_num_rows($this->consulta);
 		$this->datos = mysql_fetch_assoc($this->consulta);
 
@@ -31,7 +31,7 @@ class login{
 			{
 
 				session_start();	
-				$_SESSION['Tipo'] = 1;
+				$_SESSION['Tipo'] = $this->datos['tipo'];
 				$_SESSION['Nombre'] = $this->datos['nombre'];
 				echo '<section id="usuario"><p id="login-top" onclick="cerrar()">Session iniciada como '.$_SESSION['Nombre'].'. Click para Cerrar Session</p></section>';
 			}

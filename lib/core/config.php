@@ -8,6 +8,8 @@ $bd = 'consejo'; // nombre de la base de datos
 
 $conecta = mysql_connect($servidor,$usuario,$clave) or die ("Error al conectar a mysql");
 mysql_select_db($bd, $conecta) or die ("Base de datos '{$bd}'");
-
-
+mysql_query('character-set-filesystem=UTF8');
+mysql_query('character-set-server=UTF8');
+mysql_query('default-collation=UTF8_general_ci');
+mysql_query('default-character-set=UTF8');
 ?>
